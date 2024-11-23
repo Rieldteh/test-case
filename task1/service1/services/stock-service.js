@@ -81,39 +81,22 @@ class StockService {
         logAction(temp.shopId, temp.plu, Actions.DELETE, `Storage ${temp.id} has been deleted`);
     }
 
-    async changeStorage(productId, shopId, amount) {
-        const dbstorage = await prisma.storage.findFirst({ where: { product_id: productId, shop_id: shopId } });
-
-        if(!dbstorage) {
-            throw createError("Storage is not found", 404);
+    async incStorage(productId, shopId, amount) {
+        
+        if (amount < 0) {
+            throw createError("Amount error", 400);
         }
 
-        const isInc = amount > 0 ? true: false;
+        const storage = await this.changeStorage(productId, shopId, amount);
+        return storage;
+    }
 
-        if (!isInc) {
-            if(dbstorage.amount === 0) {
-                throw createError("Storage is empty", 200);
-            }
-            
-            if (Math.abs(amount) > dbstorage.amount) {
-                throw createError("Amount error", 400);
-            }
+    async decStorage(productId, shopId, amount) {
+        if (amount < 0) {
+            throw createError("Amount error", 400);
         }
 
-        const storage = await prisma.storage.update({
-            where: {
-                id: dbstorage.id
-            },
-            data: {
-                amount: dbstorage.amount + amount
-            },
-            include: {
-                product: true
-            }
-        });
-
-        logAction(storage.shop_id, storage.product.plu, Actions.UPDATE, `Storage ${storage.id} has been ${isInc ? 'increased' : 'decreased'} on ${amount}`);
-
+        const storage = await this.changeStorage(productId, shopId, -amount);
         return storage;
     }
 
@@ -205,6 +188,42 @@ class StockService {
         await prisma.order.delete({ where: { id } });
         
         logAction(temp.shopId, temp.plu, Actions.DELETE, `Order ${temp.id} has been deleted`);
+    }
+
+    async changeStorage(productId, shopId, amount) {
+        const dbstorage = await prisma.storage.findFirst({ where: { product_id: productId, shop_id: shopId } });
+
+        if(!dbstorage) {
+            throw createError("Storage is not found", 404);
+        }
+
+        const isInc = amount > 0 ? true: false;
+
+        if (!isInc) {
+            if(dbstorage.amount === 0) {
+                throw createError("Storage is empty", 200);
+            }
+            
+            if (Math.abs(amount) > dbstorage.amount) {
+                throw createError("Amount error", 400);
+            }
+        }
+
+        const storage = await prisma.storage.update({
+            where: {
+                id: dbstorage.id
+            },
+            data: {
+                amount: dbstorage.amount + amount
+            },
+            include: {
+                product: true
+            }
+        });
+
+        logAction(storage.shop_id, storage.product.plu, Actions.UPDATE, `Storage ${storage.id} has been ${isInc ? 'increased' : 'decreased'} on ${Math.abs(amount)}`);
+
+        return storage;
     }
 }
 

@@ -30,11 +30,21 @@ class StockController {
         }
     }
 
-    async changeStorage(req, res, next) {
+    async incStorage(req, res, next) {
         try {
             const { product_id, shop_id, amount } = req.body;
-            const shell = await stockService.changeStorage(product_id, shop_id, amount);
-            res.status(200).json({ shell });
+            const storage = await stockService.incStorage(product_id, shop_id, amount);
+            res.status(200).json({ storage });
+        } catch(error) {
+            res.status(error.statusCode ? error.statusCode : 500).json({ message: error.message });
+        }
+    }
+
+    async decStorage(req, res, next) {
+        try {
+            const { product_id, shop_id, amount } = req.body;
+            const storage = await stockService.decStorage(product_id, shop_id, amount);
+            res.status(200).json({ storage });
         } catch(error) {
             res.status(error.statusCode ? error.statusCode : 500).json({ message: error.message });
         }
