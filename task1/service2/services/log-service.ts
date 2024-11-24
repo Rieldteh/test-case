@@ -3,14 +3,19 @@ import { createError } from "./error-service";
 const prisma = new PrismaClient();
 
 class LogService {
-  async create(shop_id: number, plu: string, action: Actions, description: string) {
+  async create(
+    shop_id: number,
+    plu: string,
+    action: Actions,
+    description: string
+  ) {
     const log = await prisma.logs.create({
       data: {
         shop_id,
         plu,
         action,
-        description
-      }
+        description,
+      },
     });
 
     return log;
@@ -26,15 +31,15 @@ class LogService {
     const logs = await prisma.logs.findMany({
       skip: (pageNum - 1) * pageSize,
       take: pageSize,
-        where: {
-            shop_id: data.shop_id || undefined,
-            plu: data.plu || undefined,
-            date: {
-                gte: data.date_from || undefined,
-                lte: data.date_to || undefined
-            },
-            action: data.action || undefined
-        }
+      where: {
+        shop_id: data.shop_id || undefined,
+        plu: data.plu || undefined,
+        date: {
+          gte: data.date_from || undefined,
+          lte: data.date_to || undefined,
+        },
+        action: data.action || undefined,
+      },
     });
 
     if (logs.length === 0) {

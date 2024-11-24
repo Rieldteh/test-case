@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import logService from '../services/log-service'
+import logService from "../services/log-service";
 
 class LogController {
   async create(req: Request, res: Response) {
@@ -15,9 +15,10 @@ class LogController {
 
   async get(req: Request, res: Response) {
     try {
-      const pageNum = Number(req.params.pageNum);
+      const { page } = req.query;
+      const pageNum = typeof page === "string" ? parseInt(page, 10) : NaN;
       const data = req.body;
-      const logs = await logService.get(pageNum, data);
+      const logs = await logService.get(pageNum || 1, data);
       res.json({ logs });
     } catch (error) {
       const statusCode = (error as { statusCode?: number }).statusCode || 500;
