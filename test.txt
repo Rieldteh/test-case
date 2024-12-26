@@ -1,0 +1,34 @@
+@INPROCEEDINGS{9065538,
+  author={Sharma, Richa and Rani, Shalli and Tanwar, Sarvesh},
+  booktitle={2019 International Conference on Intelligent Computing and Control Systems (ICCS)}, 
+  title={Machine Learning Algorithms for building Recommender Systems}, 
+  year={2019},
+  volume={},
+  number={},
+  pages={785-790},
+  keywords={Recommender systems;Collaboration;Satellite broadcasting;Knowledge based systems;Switches;Conferences;Recommender Systems;Collaborative Filtering;Hybrid Recommender Systems},
+  doi={10.1109/ICCS45141.2019.9065538}}
+
+@InProceedings{10.1007/978-3-031-62281-6_5,
+author="Weiner, Felix
+and Teh, Phoey Lee
+and Cheng, Chi-Bin",
+editor="Arai, Kohei",
+title="Systematic Review of Machine Learning in Recommendation Systems Over the Last Decade",
+booktitle="Intelligent Computing",
+year="2024",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="66--75",
+abstract="This study presents a comprehensive overview of the approaches employed in recommendation systems over the last decade. The review primarily draws from two categories of filtering techniques: content-based filtering and collaborative filtering methods. We have reviewed and tabulated approximately forty articles that have been published. Major findings include: (1) collaborative filtering is more often used than content-based filtering, 70{\%} to 23{\%}, the rest is hybrid methods of these two; (2) more than half of the machine learning approaches adopted are supervised learning; however, (3) algorithm-wise, K-means the unsupervised learning algorithm emerged as the most frequently adopted approach in recommendation systems. Also notably, cosine similarity stands out as the prevalent measurement technique.",
+isbn="978-3-031-62281-6"}
+
+
+@inproceedings{inproceedings,
+author = {Shanmugasundaram, Abinaya and Sharma, Keerti},
+year = {2024},
+month = {03},
+pages = {1-5},
+title = {Systematic Review on Machine Learning based Recommendation System},
+doi = {10.1109/ICITIIT61487.2024.10580558}
+}
