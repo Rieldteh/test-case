@@ -63,7 +63,7 @@ keywords = {Artificial Intelligence (AI), AI assistant, Retail business, E-comme
 abstract = {The rapid growth of e-commerce platforms has emphasized the significance of personalized recommendation systems in enhancing user engagement and satisfaction. This research paper presents the development and evaluation of an innovative Product Recommendation System that leverages advanced Artificial Intelligence (AI) techniques to provide tailored product suggestions. The primary objective is to create a user-centric experience by integrating an AI assistant, enabling natural and interactive interactions. Through a comprehensive survey conducted to understand customer behaviour while purchasing product using AI, the study aims to assess the system's effectiveness in delivering accurate recommendations and providing a seamless purchasing experience. The paper contributes to the field by showcasing the practical implementation of AI-driven recommendation systems, highlighting their potential to transform e-commerce interactions.}
 }
 
-@article{article,
+@article{article321,
 author = {Guo, Zhihao and Song, Peng and Feng, Chenjiao and Yao, Kaixuan and Dang, Chuangyin and Liang, Jiye},
 year = {2024},
 month = {12},
@@ -74,7 +74,7 @@ doi = {10.1007/s13042-024-02500-0}
 }
 
 
-@article{article,
+@article{article123,
 author = {Khanal, Shristi and P.W.C, Prasad and Alsadoon, Abeer and Maag, Angelika},
 year = {2020},
 month = {07},
@@ -145,7 +145,7 @@ keywords = {Sparse Data, Recommendation, Bipartite Graph, Link Prediction, SVD++
 abstract = {To alleviate the big data difficulties that have created a potential problem for many Internet users, it is necessary to filter, rank, and efficiently communicate the relevant information on the Web, where the diversity of possibilities is overwhelming. Recommender systems, which sift through enormous amounts of dynamically generated data to give consumers with personalised information and services, are able to overcome this problem. Bipartite graphs are currently generally used to store and understand this data due to its sparse nature. Data are mapped to a bipartite user-item interaction network where the graph topology captures detailed information about user-item associations, transforming a recommendation issue into a link prediction problem. Earlier, approaches for link prediction in bipartite graphs for various recommendation systems were developed, but the efficacy of the prediction methodology was not close to the standards required by real-time recommenders. So, the primary goal of this research is to offer an effective link prediction-based recommendation system that takes advantage of SVD++ along with K-nearest neighbors and reduces the system's error rate, leading to better outcomes. The proposed system is sorely tested on the MovieLens dataset and compared to some traditional recommendation methods. The results demonstrate that the suggested strategy exceeds all traditional approaches in terms of accuracy, and the actual suggestions are equally encouraging.}
 }
 
-@inproceedings{inproceedings,
+@inproceedings{inproceedings321,
 author = {Tewari, Anand and Ansari, Tasif and Barman, Asim},
 year = {2014},
 month = {11},
@@ -197,7 +197,7 @@ keywords = {Session-based recommendation, Contextual recommendation, Recurrent n
 abstract = {A session-based recommendation system that helps users get the information they are interested in is an important category of personalized recommendation systems. Traditionally, session recommendation algorithms do not take full advantage of users’ contextual information. It becomes easier to get users’ preferences and context with the rapid development of mobile devices. Under such circumstances, we proposed a novel recommendation algorithm joined session-based context-aware recommendation model. The model maps contextual information into low-dimensional real vector features and then fuses them into a recurrent neural network recommendation model based on sessions by three combinations of Add, Stack, and Multilayer Perceptron. We have verified its extensibility by combining it with the functional extension module which rest on long sequences. We conducted extensive experiments on two public datasets. The experimental results show that our model significantly outperforms state-of-the-art recommendation models in terms of recommendation performance.}
 }
 
-@article{article,
+@article{article664,
 author = {Cai, Wenjie and Wang, Yufeng and Lv, Ruheng and Jin, Qun},
 year = {2019},
 month = {07},
@@ -208,7 +208,7 @@ journal = {Computers & Electrical Engineering},
 doi = {10.1016/j.compeleceng.2019.06.006}
 }
 
-@inproceedings{inproceedings,
+@inproceedings{inproceedings432,
 author = {Savadekar, Vinaya and Patil, Manoj},
 year = {2016},
 month = {12},
